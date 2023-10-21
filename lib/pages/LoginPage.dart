@@ -1,6 +1,6 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -11,6 +11,14 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _email = '';
   String _password = '';
+
+  // Função para navegar para a tela "Home"
+  void navigateToHome() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +76,11 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      // Faça algo com os valores do email e senha, como autenticar o usuário.
-                      print('Email: $_email, Senha: $_password');
+                      // Simule uma autenticação bem-sucedida (substitua por sua lógica de autenticação real).
+                      final authenticated = true;
+                      if (authenticated) {
+                        navigateToHome(); // Navega para a tela Home após a autenticação bem-sucedida.
+                      }
                     }
                   },
                   child: Text('Entrar'),
@@ -82,3 +93,5 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+// Sua classe HomePage continua a mesma como mostrada em respostas anteriores.
