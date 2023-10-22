@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(16.0),
                 child: SvgPicture.asset(
-                  "../../assets/images/logo_header.svg",
+                  "assets/images/logo_header.svg",
                   semanticsLabel: 'My SVG Image',
                   height: 100,
                   width: 70,

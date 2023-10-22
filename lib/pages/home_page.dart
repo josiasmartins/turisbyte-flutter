@@ -1,14 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:turisbyte/pages/home_page.dart';
-import 'package:turisbyte/pages/user_registration.dart';
+// ...
 
+import 'package:flutter/material.dart';
+
+import '../widgets/container_icon.dart';
 import '../widgets/custom_button.dart';
-import '../widgets/custom_input.dart';
 import '../widgets/input_icon.dart';
 import 'login_page.dart';
 
 class HomePage extends StatelessWidget {
+  // ... Seu código existente
+
   Color hexToColor(String code) {
     // Remove o caractere '#' (se presente)
     if (code[0] == '#') {
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double inputWidth = screenWidth * 0.92; // 85% da tela
+    double inputWidth = screenWidth * 0.92;
 
     void navigateToLogin() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -38,52 +39,44 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              // Container(
-              //   padding: EdgeInsets.all(16.0),
-              //   child: SvgPicture.asset(
-              //     "../../assets/images/logo_header.svg",
-              //     semanticsLabel: 'My SVG Image',
-              //     height: 100,
-              //     width: 70,
-              //   ),
-              // ),
-
+              Divider(
+                height: 38.0,
+                color: hexToColor("#ECECEC"),
+                thickness: 3.0,
+                indent: 30.0,
+                endIndent: 30.0,
+              ),
+              SizedBox(height: 40),
               InputWithIcon(
                 labelText: 'Email',
                 inputWidth: inputWidth,
-                suffixIcon: Icons.email, // Ícone de e-mail
+                svgIcon:
+                    "assets/images/map_icon.svg", // Corrija o caminho para o ícone SVG
               ),
-              CustomInputField(
-                labelText: 'Nome',
-                inputWidth: inputWidth,
+              ContainerWithIcon(
+                width: 110.727,
+                height: 106.773,
+                borderRadius: 17.0,
+                color: Color(0xFFF1F5F4),
+                icon: Icons.home,
+                onTap: () {
+                  print('Retângulo tocado!');
+                },
               ),
-              CustomInputField(
-                labelText: 'Sobrenome',
-                obscureText: true,
-                inputWidth: inputWidth,
+              ContainerWithIcon(
+                width: 110.727,
+                height: 106.773,
+                borderRadius: 17.0,
+                color: Color(0xFFF1F5F4),
+                icon: Icons.home,
+                onTap: () {
+                  print('Retângulo tocado!');
+                },
               ),
-              CustomInputField(
-                labelText: 'Atividade',
-                inputWidth: inputWidth,
-              ),
-              CustomInputField(
-                labelText: 'Bairro',
-                obscureText: true,
-                inputWidth: inputWidth,
-              ),
-              CustomInputField(
-                labelText: 'Email',
-                inputWidth: inputWidth,
-              ),
-              CustomInputField(
-                labelText: 'Telefone',
-                obscureText: true,
-                inputWidth: inputWidth,
-              ),
-              SizedBox(height: 78.0),
+              SizedBox(height: 100),
               CustomButton(
                 buttonText: "Login",
-                buttonColor: hexToColor("#FD0101"), // Cor do botão
+                buttonColor: hexToColor("#FD0101"),
                 onPressed: () {
                   navigateToLogin();
                 },
@@ -92,11 +85,9 @@ class HomePage extends StatelessWidget {
               Divider(
                 height: 20.0,
                 color: hexToColor("#ECECEC"),
-                thickness: 6.0, // Espessura da linha
-                indent:
-                    30.0, // Aumente este valor para mover a linha para a direita
-                endIndent:
-                    30.0, // Aumente este valor para mover a linha para a esquerda
+                thickness: 6.0,
+                indent: 30.0,
+                endIndent: 30.0,
               ),
               SizedBox(height: 40.0),
             ],
@@ -106,3 +97,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// ...

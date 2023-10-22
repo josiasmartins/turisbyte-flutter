@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:turisbyte/pages/home_page.dart';
 import 'package:turisbyte/pages/user_registration.dart';
 
+import '../widgets/container_icon.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
 import 'login_page.dart';
@@ -40,7 +41,7 @@ class UserRegistrationPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(16.0),
                 child: SvgPicture.asset(
-                  "../../assets/images/logo_header.svg",
+                  "assets/images/logo_header.svg",
                   semanticsLabel: 'My SVG Image',
                   height: 100,
                   width: 70,

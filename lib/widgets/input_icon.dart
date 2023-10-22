@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class InputWithIcon extends StatelessWidget {
   final String labelText;
   final bool obscureText;
   final double inputWidth;
-  final IconData? suffixIcon; // Ícone a ser exibido no final do campo
+  final String? svgIcon; // SVG a ser exibido no final do campo
 
   InputWithIcon({
     required this.labelText,
     this.obscureText = false,
     required this.inputWidth,
-    this.suffixIcon, // Recebe um ícone opcional
+    this.svgIcon, // Recebe o SVG opcional
   });
 
   @override
@@ -32,8 +33,14 @@ class InputWithIcon extends StatelessWidget {
             borderRadius: BorderRadius.circular(31.0),
             borderSide: BorderSide.none,
           ),
-          suffixIcon: suffixIcon != null
-              ? Icon(suffixIcon) // Exibe o ícone se ele for fornecido
+          suffixIcon: svgIcon != null
+              ? Padding(
+                  padding: EdgeInsets.all(10),
+                  child: SvgPicture.asset(
+                    svgIcon!,
+                    width: 24, // Ajuste o tamanho do ícone conforme necessário
+                  ),
+                ) // Exibe o ícone SVG se ele for fornecido
               : null, // Se nenhum ícone for fornecido, não exibe nada
         ),
       ),
