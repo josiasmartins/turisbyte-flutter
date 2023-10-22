@@ -18,6 +18,20 @@ class MyApp extends StatelessWidget {
 }
 
 class LoginPage extends StatelessWidget {
+
+Color hexToColor(String code) {
+  // Remove o caractere '#' (se presente)
+  if (code[0] == '#') {
+    code = code.substring(1);
+  }
+
+  // Adiciona um valor alpha de 255 (0xFF) e converte para inteiro
+  int colorInt = int.parse(code, radix: 16) + 0xFF000000;
+
+  // Cria e retorna o objeto Color
+  return Color(colorInt);
+}
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -51,7 +65,14 @@ class LoginPage extends StatelessWidget {
             ),
             CustomButton(
               buttonText: "Entrar",
-              buttonColor: Colors.blue, // Cor do botão
+              buttonColor: hexToColor("#FD0101"), // Cor do botão
+              onPressed: () {
+                // Adicione a lógica de autenticação aqui
+              },
+            ),
+            CustomButton(
+              buttonText: "Cadastrar-se",
+              buttonColor: Colors.black, // Cor do botão
               onPressed: () {
                 // Adicione a lógica de autenticação aqui
               },
