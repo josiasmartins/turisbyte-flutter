@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:turisbyte/pages/home_page.dart';
+import 'package:turisbyte/pages/user_registration.dart';
 
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
@@ -37,6 +39,18 @@ class LoginPage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double inputWidth = screenWidth * 0.92; // 85% da tela
 
+    void navigateToUserRegistration() {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return UserRegistration();
+      }));
+    }
+    
+    void navigateToHome() {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return HomePage();
+      }));
+    }
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -60,26 +74,19 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
                 inputWidth: inputWidth,
               ),
+              SizedBox(height: 80.0),
               CustomButton(
                 buttonText: "Entrar",
                 buttonColor: hexToColor("#FD0101"), // Cor do botão
-                onPressed: () {
-                  // Adicione a lógica de autenticação aqui
-                },
+                onPressed: () { navigateToHome(); },
               ),
+              SizedBox(height: 20.0),
               CustomButton(
                 buttonText: "Cadastrar-se",
                 buttonColor: Colors.black, // Cor do botão
-                onPressed: () {
-                  // Adicione a lógica de autenticação aqui
-                },
+                onPressed: () { navigateToUserRegistration(); },
               ),
-              TextButton(
-                onPressed: () {
-                  // Implemente a função de cadastro aqui
-                },
-                child: Text('Cadastrar-se'),
-              ),
+              SizedBox(height: 10.0),
               Divider(
                 height: 20.0,
                 color: Colors.black,

@@ -15,7 +15,7 @@ class CustomInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: inputWidth,
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(10),
       child: TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
