@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:turisbyte/pages/user_registration.dart';
 
+import '../widgets/button_animed.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +21,15 @@ class _LoginPageState extends State<LoginPage> {
       MaterialPageRoute(builder: (context) => HomePage()),
     );
   }
+
+    void navigateToUSerRegistration() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => UserRegistration()),
+    );
+  }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -73,19 +84,23 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      // Simule uma autenticação bem-sucedida (substitua por sua lógica de autenticação real).
-                      final authenticated = true;
-                      if (authenticated) {
-                        navigateToHome(); // Navega para a tela Home após a autenticação bem-sucedida.
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        // Simule uma autenticação bem-sucedida (substitua por sua lógica de autenticação real).
+                        final authenticated = true;
+                        if (authenticated) {
+                          navigateToHome(); // Navega para a tela Home após a autenticação bem-sucedida.
+                        }
                       }
-                    }
-                  },
-                  child: Text('Entrar'),
+                    },
+                    child: Text('Entrar'),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AnimatedRoundButton(buttonText: "Cadastrar usuario", onPressed: () => { navigateToUSerRegistration() }, ),
+              )
             ],
           ),
         ),
