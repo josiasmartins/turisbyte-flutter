@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/custom_input.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double inputWidth = screenWidth * 0.92; // 85% da tela
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -27,44 +32,14 @@ class LoginPage extends StatelessWidget {
                 height: 100.0,
               ),
             ),
-            Container(
-              width: 300.0, // 75% da tela
-              padding: EdgeInsets.all(16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  filled: true,
-                  fillColor: Color(0xFFF1F5F4), // Cor F1F5F4
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(31.0),
-                    borderSide: BorderSide.none, // Nenhuma borda
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(31.0),
-                    borderSide: BorderSide.none, // Nenhuma borda
-                  ),
-                ),
-              ),
+            CustomInputField(
+              labelText: 'Email',
+              inputWidth: inputWidth,
             ),
-            Container(
-              width: 300.0, // 75% da tela
-              padding: EdgeInsets.all(16.0),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Senha',
-                  filled: true,
-                  fillColor: Color(0xFFF1F5F4), // Cor F1F5F4
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(31.0),
-                    borderSide: BorderSide.none, // Nenhuma borda
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(31.0),
-                    borderSide: BorderSide.none, // Nenhuma borda
-                  ),
-                ),
-              ),
+            CustomInputField(
+              labelText: 'Senha',
+              obscureText: true,
+              inputWidth: inputWidth,
             ),
             ElevatedButton(
               onPressed: () {
