@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/input_model.dart';
 import '../widgets/inputs.dart';
 
-class HomePage extends StatelessWidget {
+class UserRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
