@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
 
 void main() {
@@ -27,9 +29,15 @@ class LoginPage extends StatelessWidget {
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(16.0),
-              child: Image.asset(
-                'assets/logo.png', // Substitua pelo caminho real da sua imagem
-                height: 100.0,
+              // child: Image.asset(
+              //   'assets/logo.png', // Substitua pelo caminho real da sua imagem
+              //   height: 100.0,
+              // ),
+              child: SvgPicture.asset(
+                "../../assets/images/logo_header.svg",
+                semanticsLabel: 'My SVG Image',
+                height: 100,
+                width: 70,
               ),
             ),
             CustomInputField(
@@ -41,11 +49,12 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
               inputWidth: inputWidth,
             ),
-            ElevatedButton(
+            CustomButton(
+              buttonText: "Entrar",
+              buttonColor: Colors.blue, // Cor do botão
               onPressed: () {
-                // Implemente a função de login aqui
+                // Adicione a lógica de autenticação aqui
               },
-              child: Text('Login'),
             ),
             TextButton(
               onPressed: () {
