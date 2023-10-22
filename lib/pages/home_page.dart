@@ -1,6 +1,7 @@
 // ...
 
 import 'package:flutter/material.dart';
+import 'package:turisbyte/pages/eat_drink_page.dart';
 
 import '../widgets/container_icon.dart';
 import '../widgets/custom_button.dart';
@@ -34,6 +35,12 @@ class HomePage extends StatelessWidget {
       }));
     }
 
+    void navigateToEatDrinkPage() {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return EatDrinkPage();
+      }));
+    }
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -48,7 +55,7 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 40),
               InputWithIcon(
-                labelText: 'Email',
+                labelText: 'Pesquisar',
                 inputWidth: inputWidth,
                 svgIcon:
                     "assets/images/map_icon.svg", // Corrija o caminho para o ícone SVG
@@ -61,7 +68,8 @@ class HomePage extends StatelessWidget {
                 icon: Icons.home,
                 text: "Comer e beber",
                 onTap: () {
-                  print('Retângulo tocado!');
+                  print('Card comer e beber acionado!');
+                  navigateToEatDrinkPage();
                 },
               ),
               ContainerWithIcon(

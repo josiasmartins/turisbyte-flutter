@@ -1,14 +1,18 @@
+// ...
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:turisbyte/pages/home_page.dart';
-import 'package:turisbyte/pages/user_registration.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../widgets/container_icon.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
+import '../widgets/icon_text.dart';
+import '../widgets/input_icon.dart';
 import 'login_page.dart';
 
-class UserRegistrationPage extends StatelessWidget {
+class EatDrinkPage extends StatelessWidget {
+  // ... Seu código existente
+
   Color hexToColor(String code) {
     // Remove o caractere '#' (se presente)
     if (code[0] == '#') {
@@ -25,7 +29,7 @@ class UserRegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double inputWidth = screenWidth * 0.92; // 85% da tela
+    double inputWidth = screenWidth * 0.92;
 
     void navigateToLogin() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -38,15 +42,19 @@ class UserRegistrationPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(16.0),
-                child: SvgPicture.asset(
-                  "assets/images/logo_header.svg",
-                  semanticsLabel: 'My SVG Image',
-                  height: 100,
-                  width: 70,
-                ),
+              SizedBox(height: 20),
+              IconWithText(
+                iconData: Icons.star,
+                text: "Comer",
               ),
+              SizedBox(height: 60),
+              InputWithIcon(
+                labelText: 'Pesquisar',
+                inputWidth: inputWidth,
+                svgIcon:
+                    "assets/images/map_icon.svg", // Corrija o caminho para o ícone SVG
+              ),
+              SizedBox(height: 40.0),
               CustomInputField(
                 labelText: 'Nome',
                 inputWidth: inputWidth,
@@ -92,10 +100,12 @@ class UserRegistrationPage extends StatelessWidget {
                 height: 20.0,
                 color: hexToColor("#ECECEC"),
                 thickness: 6.0, // Espessura da linha
-                indent: 30.0, // Aumente este valor para mover a linha para a direita
-                endIndent: 30.0, // Aumente este valor para mover a linha para a esquerda
+                indent:
+                    30.0, // Aumente este valor para mover a linha para a direita
+                endIndent:
+                    30.0, // Aumente este valor para mover a linha para a esquerda
               ),
-               SizedBox(height: 40.0),
+              SizedBox(height: 40.0),
             ],
           ),
         ),
@@ -103,3 +113,5 @@ class UserRegistrationPage extends StatelessWidget {
     );
   }
 }
+
+// ...
