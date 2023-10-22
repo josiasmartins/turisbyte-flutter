@@ -59,6 +59,7 @@ class HomePage extends StatelessWidget {
                 borderRadius: 17.0,
                 color: Color(0xFFF1F5F4),
                 icon: Icons.home,
+                text: "Comer e beber",
                 onTap: () {
                   print('Retângulo tocado!');
                 },
@@ -69,6 +70,29 @@ class HomePage extends StatelessWidget {
                 borderRadius: 17.0,
                 color: Color(0xFFF1F5F4),
                 icon: Icons.home,
+                text: "Passear",
+                onTap: () {
+                  print('Retângulo tocado!');
+                },
+              ),
+              ContainerWithIcon(
+                width: 110.727,
+                height: 106.773,
+                borderRadius: 17.0,
+                color: Color(0xFFF1F5F4),
+                icon: Icons.home,
+                text: "Visitar",
+                onTap: () {
+                  print('Retângulo tocado!');
+                },
+              ),
+              ContainerWithIcon(
+                width: 110.727,
+                height: 106.773,
+                borderRadius: 17.0,
+                color: Color(0xFFF1F5F4),
+                icon: Icons.home,
+                text: "Hospedar",
                 onTap: () {
                   print('Retângulo tocado!');
                 },
