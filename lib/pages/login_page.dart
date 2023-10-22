@@ -6,21 +6,8 @@ import 'package:turisbyte/pages/user_registration.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LoginPage(),
-    );
-  }
-}
 
 class LoginPage extends StatelessWidget {
-
   Color hexToColor(String code) {
     // Remove o caractere '#' (se presente)
     if (code[0] == '#') {
@@ -41,10 +28,10 @@ class LoginPage extends StatelessWidget {
 
     void navigateToUserRegistration() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return UserRegistration();
+        return UserRegistrationPage();
       }));
     }
-    
+
     void navigateToHome() {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return HomePage();
@@ -78,22 +65,26 @@ class LoginPage extends StatelessWidget {
               CustomButton(
                 buttonText: "Entrar",
                 buttonColor: hexToColor("#FD0101"), // Cor do botão
-                onPressed: () { navigateToHome(); },
+                onPressed: () {
+                  navigateToHome();
+                },
               ),
               SizedBox(height: 20.0),
               CustomButton(
                 buttonText: "Cadastrar-se",
                 buttonColor: Colors.black, // Cor do botão
-                onPressed: () { navigateToUserRegistration(); },
+                onPressed: () {
+                  navigateToUserRegistration();
+                },
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 40.0),
               Divider(
                 height: 20.0,
-                color: Colors.black,
-                thickness: 1.0,
-                indent: 16.0,
-                endIndent: 16.0,
-              ),
+                color: hexToColor("#ECECEC"),
+                thickness: 6.0, // Espessura da linha
+                indent: 30.0, // Aumente este valor para mover a linha para a direita
+                endIndent: 30.0, // Aumente este valor para mover a linha para a esquerda
+              )
             ],
           ),
         ),
