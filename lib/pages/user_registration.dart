@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:turisbyte/pages/home_page.dart';
-import 'package:turisbyte/pages/user_registration.dart';
+import 'package:turisbyte/pages/students_page.dart';
+
+
 
 import '../widgets/container_icon.dart';
 import '../widgets/custom_button.dart';
